@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+    <div class = "container d-grid gap-2 col-9 mx-auto">
+        <br>
+        <% if(data){ %>
+            <% data.forEach(department=>{ %>
+                <div class="card block border-secondary" style="margin:0.9em; width: 30rem; height: 15rem; display: inline-block;">
+                    <div class="card-header" style="font-size:x-large; color: white; background-color: #636d75;">Department ID: <%=department['dept_id']%></div>
+                    <div class="card-body">
+                        <br>
+                        <h5 class="card-text">Department Name: <%=department['dept_name']%></h5>
+                        <br>
+                        <a href="/departments/<%=department['dept_id']%>" type="button" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            <%});%>
+        <%}else{%>
+            <h1>No Departments</h1>
+        <%}%>
+    </div>
+<%- include("../partials/footer") %>

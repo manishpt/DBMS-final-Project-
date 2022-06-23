@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+    <div class = "container d-grid gap-2 col-10 mx-auto">
+        <br>
+        <% if(data){ %>
+            <% data.forEach(project=>{ %>
+                <div class="card block border-secondary" style="margin:0.8em; width: 22rem; height: 15rem; display: inline-block;">
+                    <div class="card-header" style="font-size:larger; color: white; background-color: #636d75;">Project ID: <%=project['p_id']%></div>
+                    <div class="card-body">
+                        <br>
+                        <h5 class="card-text">Project Name: <%=project['p_name']%></h5>
+                        <br>
+                        <a href="/projects/<%=project['p_id']%>" type="button" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            <%});%>
+        <%}else{%>
+            <h1>No projects</h1>
+        <%}%>
+    </div>
+<%- include("../partials/footer") %>
